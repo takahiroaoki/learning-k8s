@@ -1,7 +1,13 @@
-# learning-k8s
+# minikube-env
+
+This is the project for Minikube execution environment.
+
+The maintaner use EC2 instance(Amazon Linux2) as the virtual machine.
+
+Minikube need 2CPUs, so the instance type is larger than t2.medium.
 
 ## Setup
-SSH to EC2 Instance(Amazon Linux 2) and follow these steps in it.
+SSH to EC2 Instance and follow these steps in it.
 
 ### Git
 ```
