@@ -21,8 +21,9 @@ $ git clone https://github.com/takahiroaoki/minikube-env.git
 ### Minikube & Docker
 ```
 $ cd ~/workspace/minikube-env
-$ make minikube
 $ make docker
+$ exit
+$ make minikube
 ```
 
 ## How to use
