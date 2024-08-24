@@ -20,7 +20,7 @@ $ git clone https://github.com/takahiroaoki/minikube-env.git
 
 ### Docker & Minikube
 ```
-$ cd learning-k8s
+$ cd ~/workspace/minikube-env
 $ make docker
 $ make minikube
 ```
