@@ -1,5 +1,3 @@
-init:docker minikube
-
 docker:
 	sudo amazon-linux-extras install -y docker
 	sudo systemctl enable docker
