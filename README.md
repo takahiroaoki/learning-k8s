@@ -24,3 +24,18 @@ $ cd learning-k8s
 $ make docker
 $ make minikube
 ```
+
+## How to use
+(Now editing)
+```
+$ minikube start
+
+$ After the following, you can access http://localhost:8080
+$ kubectl port-forward service/${service name} 8080:${load balancer's port}
+```
+
+## Appendix
+```
+# Make alias for using kubectl via minikube
+$ alias kubectl="minikube kubectl --"
+```
