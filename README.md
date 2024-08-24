@@ -18,11 +18,11 @@ $ cd workspace
 $ git clone https://github.com/takahiroaoki/minikube-env.git
 ```
 
-### Docker & Minikube
+### Minikube & Docker
 ```
 $ cd ~/workspace/minikube-env
-$ make docker
 $ make minikube
+$ make docker
 ```
 
 ## How to use
@@ -36,6 +36,18 @@ $ kubectl port-forward service/${service name} 8080:${load balancer's port}
 
 ## Appendix
 ```
-# Make alias for using kubectl via minikube
-$ alias kubectl="minikube kubectl --"
+# start cluster
+$ minikube start
+
+# stop cluster
+$ minikube stop
+
+# check status
+$ minikube status
+
+# delete cluster
+$ minikube delete
+
+# check addons
+$ minikube addons list
 ```
