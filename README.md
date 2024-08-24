@@ -37,16 +37,16 @@ $ kubectl port-forward service/${service name} 8080:${load balancer's port}
 
 ## Appendix
 ```
-# start cluster
+# start node
 $ minikube start
 
-# stop cluster
+# stop node
 $ minikube stop
 
 # check status
 $ minikube status
 
-# delete cluster
+# delete node
 $ minikube delete
 
 # check addons
