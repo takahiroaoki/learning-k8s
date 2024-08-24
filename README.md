@@ -15,7 +15,7 @@ $ sudo yum update
 $ sudo yum install -y git
 $ mkdir ~/workspace
 $ cd workspace
-$ git clone https://github.com/takahiroaoki/learning-k8s.git
+$ git clone https://github.com/takahiroaoki/minikube-env.git
 ```
 
 ### Docker & Minikube
