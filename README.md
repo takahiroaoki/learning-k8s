@@ -1,4 +1,4 @@
-# minikube-env
+# minikube-aws
 
 This is the project for Minikube execution environment.
 
@@ -15,14 +15,13 @@ $ sudo yum update
 $ sudo yum install -y git
 $ mkdir ~/workspace
 $ cd workspace
-$ git clone https://github.com/takahiroaoki/minikube-env.git
+$ git clone https://github.com/takahiroaoki/minikube-aws.git
 ```
 
 ### Minikube & Docker
 ```
 $ cd ~/workspace/minikube-env
 $ make docker
-$ exit
 $ make minikube
 ```
 
