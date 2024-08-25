@@ -25,66 +25,71 @@ $ make init
 ```
 
 ## How to use
+### Nginx sample (WIP)
+Get index page through `localhost:8000 -> ssh tunnel -> ec2:80 -> each pod`
+
 ```
 $ minikube start
-$ kubectl apply -f nginx/nginx.yml
 
-# After the following, you can access http://localhost:8080
-$ kubectl port-forward service/${service name} 8080:${load balancer's port}
+# Apply
+$ kubectl apply -f nginx/nginx.yml -f nginx/debug.yml
+$ kubectl port-forward service/nginx-svc 8000:80
 ```
+The port is OK only if its larger than 1023 and available on your host machine.
+
 
 ### Kubernetes dashboard
 ```
-# on one terminal
+# On one terminal
 $ minikube dashboard
 
-# on another terminal
+# On another terminal
 $ kubectl proxy --address=0.0.0.0 --accept-hosts='.*' --port=8080
 ```
-then, you can access to http://${EC2 instance public IP}:8080/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/
+Then, you can access to `http://${EC2 instance public IP}:8080/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/`
 
 ## Appendix
 ### minikube
 ```
-# start node
+# Start node
 $ minikube start
 
-# stop node
+# Stop node
 $ minikube stop
 
-# check status
+# Check status
 $ minikube status
 
-# delete node
+# Delete node
 $ minikube delete
 
-# check addons
+# Check addons
 $ minikube addons list
 ```
 
 ### kubectl
 ```
-# apply manifest file
+# Apply manifest file
 $ kubectl apply -f ${file name}
 
-# delete resource
+# Delete resource
 $ kubectl delete -f ${file name}
 
-# check pod status
+# Check pod status
 $ kubectl get pod [-o wide]
 
-# connect to pod
+# Connect to pod
 $ kubectl exec -it ${pod name} -- sh
 
-# copy file to pod
+# Copy file to pod
 $ kubectl cp ${src path} ${pod name}:${dest path}
 
-# copy file from pod
+# Copy file from pod
 $ kubectl cp ${pod name}:${src path} ${dest path}
 
-# check pod info
+# Check pod info
 $ kubectl describe pod/${pod name}
 
-# check log in a pod
+# Check log in a pod
 $ kubectl logs pod/${pod name}
 ```
