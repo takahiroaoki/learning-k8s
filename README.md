@@ -66,7 +66,7 @@ $ kubectl delete -f ${file name}
 $ kubectl get pod [-o wide]
 
 # connect to pod
-$ kubectl exec -it ${pod name} sh
+$ kubectl exec -it ${pod name} -- sh
 
 # copy file to pod
 $ kubectl cp ${src path} ${pod name}:${dest path}
