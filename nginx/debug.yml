@@ -16,8 +16,5 @@ spec:
         - |
           while true
           do
-            sleep ${DELAY}
+            sleep 5
           done
-      env:
-        - name: "DELAY"
-          value: "5"
