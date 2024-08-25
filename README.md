@@ -18,11 +18,10 @@ $ cd workspace
 $ git clone https://github.com/takahiroaoki/minikube-aws.git
 ```
 
-### Minikube & Docker
+### Docker & Minikube
 ```
 $ cd ~/workspace/minikube-env
-$ make docker
-$ make minikube
+$ make init
 ```
 
 ## How to use
