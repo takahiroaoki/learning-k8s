@@ -36,6 +36,7 @@ $ kubectl port-forward service/${service name} 8080:${load balancer's port}
 ```
 
 ## Appendix
+### minikube
 ```
 # start node
 $ minikube start
@@ -51,4 +52,25 @@ $ minikube delete
 
 # check addons
 $ minikube addons list
+```
+
+### kubectl
+```
+# apply manifest file
+$ kubectl apply -f ${file name}
+
+# delete resource
+$ kubectl delete -f ${file name}
+
+# check pod status
+$ kubectl get pod [-o wide]
+
+# connect to pod
+$ kubectl exec -it ${pod name} sh
+
+# copy file to pod
+$ kubectl cp ${src path} ${pod name}:${dest path}
+
+# copy file from pod
+$ kubectl cp ${pod name}:${src path} ${dest path}
 ```
