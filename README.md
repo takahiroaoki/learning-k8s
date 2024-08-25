@@ -73,4 +73,10 @@ $ kubectl cp ${src path} ${pod name}:${dest path}
 
 # copy file from pod
 $ kubectl cp ${pod name}:${src path} ${dest path}
+
+# check pod info
+$ kubectl describe pod/${pod name}
+
+# check log in a pod
+$ kubectl logs pod/${pod name}
 ```
