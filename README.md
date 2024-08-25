@@ -33,6 +33,16 @@ $ kubectl apply -f nginx/nginx.yml
 $ kubectl port-forward service/${service name} 8080:${load balancer's port}
 ```
 
+### Kubernetes dashboard
+```
+# on one terminal
+$ minikube dashboard
+
+# on another terminal
+$ kubectl proxy --address=0.0.0.0 --accept-hosts='.*' --port=8080
+```
+then, you can access to http://${EC2 instance public IP}:8080/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/
+
 ## Appendix
 ### minikube
 ```
