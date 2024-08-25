@@ -2,7 +2,7 @@
 
 This is the project for Minikube execution environment.
 
-The maintaner use EC2 instance(Amazon Linux2) as the virtual machine.
+The maintaner uses EC2 instance(Amazon Linux2) as the virtual machine.
 
 Minikube need 2CPUs, so the instance type is larger than t2.medium.
 
@@ -27,11 +27,11 @@ $ make minikube
 ```
 
 ## How to use
-(Now editing)
 ```
 $ minikube start
+$ kubectl apply -f nginx/nginx.yml
 
-$ After the following, you can access http://localhost:8080
+# After the following, you can access http://localhost:8080
 $ kubectl port-forward service/${service name} 8080:${load balancer's port}
 ```
 
