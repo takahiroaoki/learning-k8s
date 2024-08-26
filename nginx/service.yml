@@ -1,0 +1,15 @@
+# Service
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginx-svc
+  namespace: default
+spec:
+  type: LoadBalancer
+  selector:
+    app: nginx
+    env: dev
+  ports:
+    - port: 3000
+      targetPort: 80
+      protocol: TCP

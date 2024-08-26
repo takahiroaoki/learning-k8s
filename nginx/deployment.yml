@@ -1,6 +1,6 @@
 # Deployment
-apiVersion: apps/v1
 kind: Deployment
+apiVersion: apps/v1
 metadata:
   name: nginx-deploy
   namespace: default
@@ -43,26 +43,9 @@ spec:
             - containerPort: 80
 
 ---
-# Service
-apiVersion: v1
-kind: Service
-metadata:
-  name: nginx-svc
-  namespace: default
-spec:
-  type: LoadBalancer
-  selector:
-    app: nginx
-    env: dev
-  ports:
-    - port: 80
-      targetPort: 80
-      protocol: TCP
-
----
 # ConfigMap
-apiVersion: v1
 kind: ConfigMap
+apiVersion: v1
 metadata:
   name: nginx-cm
   namespace: default
@@ -71,8 +54,8 @@ data:
 
 ---
 # Secret
-apiVersion: v1
 kind: Secret
+apiVersion: v1
 metadata:
   name: nginx-secret
   namespace: default

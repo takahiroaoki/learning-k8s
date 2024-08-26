@@ -26,17 +26,17 @@ $ make init
 
 ## How to use
 ### Nginx sample (WIP)
-Get index page through `localhost:8000 -> ssh tunnel -> ec2:80 -> each pod`
+Get index page through `127.0.0.1(on your machine):3000 -> ssh tunnel -> 127.0.0.1:3000(service on ec2) -> each pod`
 
 ```
 $ minikube start
 
 # Apply
-$ kubectl apply -f nginx/nginx.yml -f nginx/debug.yml
-$ kubectl port-forward service/nginx-svc 8000:80
+$ kubectl apply -f nginx/deployment.yml -f nginx/service.yml
+$ kubectl proxy --port=3000
 ```
-The port is OK only if its larger than 1023 and available on your host machine.
-
+The port is OK if it is larger than 1023 and available on your machine.
+Then get access to `http://127.0.0.1:3000/api/v1/namespaces/default/services/nginx-svc/proxy/`
 
 ### Kubernetes dashboard
 ```
@@ -47,16 +47,16 @@ Then, you can access to `http://127.0.0.1:${auto assigned port}/api/v1/namespace
 ## Appendix
 ### minikube
 ```
-# Start node
+# Start cluster
 $ minikube start
 
-# Stop node
+# Stop cluster
 $ minikube stop
 
 # Check status
 $ minikube status
 
-# Delete node
+# Delete cluster
 $ minikube delete
 
 # Check addons
@@ -87,5 +87,5 @@ $ kubectl cp ${pod name}:${src path} ${dest path}
 $ kubectl describe pod/${pod name}
 
 # Check log in a pod
-$ kubectl logs pod/${pod name}
+$ kubectl logs pod/${pod name} [--follow]
 ```
