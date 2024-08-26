@@ -40,13 +40,9 @@ The port is OK only if its larger than 1023 and available on your host machine.
 
 ### Kubernetes dashboard
 ```
-# On one terminal
 $ minikube dashboard
-
-# On another terminal
-$ kubectl proxy --address=0.0.0.0 --accept-hosts='.*' --port=8080
 ```
-Then, you can access to `http://${EC2 instance public IP}:8080/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/`
+Then, you can access to `http://127.0.0.1:${auto assigned port}/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/` via SSH tunnel.
 
 ## Appendix
 ### minikube
