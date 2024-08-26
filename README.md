@@ -25,8 +25,8 @@ $ make init
 ```
 
 ## How to use
-### Nginx sample (WIP)
-Get index page through `127.0.0.1(on your machine):3000 -> ssh tunnel -> 127.0.0.1:3000(service on ec2) -> each pod`
+### Nginx sample
+The access flow is like `127.0.0.1(on your machine):3000 -> ssh tunnel -> kubectl proxy -> 127.0.0.1:3000(service on ec2) -> each pod`.
 
 ```
 $ minikube start
