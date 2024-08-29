@@ -11,8 +11,8 @@ SSH to EC2 Instance and follow these steps in it.
 
 ### Git
 ```
-$ sudo yum update
-$ sudo yum install -y git
+$ sudo dnf update
+$ sudo dnf install -y git
 $ mkdir ~/workspace
 $ cd workspace
 $ git clone https://github.com/takahiroaoki/minikube-aws.git
@@ -21,7 +21,7 @@ $ git clone https://github.com/takahiroaoki/minikube-aws.git
 ### Docker & Minikube
 ```
 $ cd ~/workspace/minikube-env
-$ make init
+$ sh setup.sh
 ```
 
 ## How to use
