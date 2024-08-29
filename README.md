@@ -6,10 +6,24 @@ The maintaner uses EC2 instance(Amazon Linux2) as the virtual machine.
 
 Minikube need 2CPUs, so the instance type is larger than t2.medium.
 
+The infrastructure is maintained by followings.
+- [tf-container](https://github.com/takahiroaoki/tf-container): Terraform for EC2 and other settings
+- [packer-container](https://github.com/takahiroaoki/packer-container): Packer for exclusive AMI
+
 ## Setup
 SSH to EC2 Instance and follow these steps in it.
 
-### Git
+### With exclusive AMI
+If you use [packer-container](https://github.com/takahiroaoki/packer-container) and generate exclusive AMI, setup is quite easy.
+
+```
+$ mkdir ~/workspace
+$ cd workspace
+$ git clone https://github.com/takahiroaoki/minikube-aws.git
+```
+
+### Without exclusive AMI (Depricated)
+#### Git
 ```
 $ sudo dnf update
 $ sudo dnf install -y git
@@ -18,11 +32,12 @@ $ cd workspace
 $ git clone https://github.com/takahiroaoki/minikube-aws.git
 ```
 
-### Docker & Minikube
+#### Docker & Minikube
 ```
 $ cd ~/workspace/minikube-env
 $ sh setup.sh
 ```
+Please be careful because each package version can be obsolete.
 
 ## How to use
 ### Nginx sample
